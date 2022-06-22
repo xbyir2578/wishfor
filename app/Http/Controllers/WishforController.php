@@ -30,10 +30,12 @@ class WishforController extends Controller
     {
         $request->validate([
             'content' => 'required|max:255',
+            'url' => 'required|max:255',
         ]);
 
         $request->user()->wishfors()->create([
             'content' => $request->content,
+            'url' => $request->url,
         ]);
 
         return back();

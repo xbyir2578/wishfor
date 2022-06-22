@@ -11,6 +11,9 @@
                         <span class="text-muted">posted at {{ $wishfor->created_at }}</span>
                     </div>
                     <div>
+                        <p class="mb-0">{!! nl2br(e($wishfor->url)) !!}</p>
+                    </div>
+                    <div>
                         {{-- 投稿内容 --}}
                         <p class="mb-0">{!! nl2br(e($wishfor->content)) !!}</p>
                     </div>
