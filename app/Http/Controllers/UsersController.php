@@ -10,19 +10,24 @@ class UsersController extends Controller
 {
     public function index()
     {
-        $user = User::orderBy('id', 'derc')->paginate(10);
+        $user = User::orderBy('id', 'desc')->paginate(10);
         
         return view('users.index', [
-           'users' => $users, 
+           'user' => $user, 
         ]);
     }
     
     public function show($id)
     {
         $user = User::findOrFail($id);
+        
+        $user->loadRelationshipCounts();
+        
+        $wishfors = $user->wishfors()->orderBy('created_at', 'desc')->paginate(10);
 
         return view('users.show', [
             'user' => $user,
+            'wishfors' => $wishfors,
         ]);
     }
 }
