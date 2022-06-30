@@ -23,6 +23,12 @@ Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
-    Route::resource('wishfor', 'WishforController', ['only' => ['store', 'destroy']]);
+        Route::resource('wishfor', 'WishforController', ['only' => ['store', 'destroy']]);
 });
+    
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    
+Route::group(['prefix' => 'wishfors/{id}'], function () {
+        Route::post('get', 'OwnedController@store')->name('owned.get');
+        Route::delete('unget', 'OwnedController@destroy')->name('owned.unget');
+    });

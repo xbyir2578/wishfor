@@ -7,17 +7,19 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     </head>
 
-    <body>
+    <body class="bg-light">
+        <body style="background-image: url('23719095_l.jpg');">
 
-        {{-- ナビゲーションバー --}}
-        @include('commons.navbar')
-
-        <div class="container">
-            {{-- エラーメッセージ --}}
-            @include('commons.error_messages')
-
-            @yield('content')
-        </div>
+            {{-- ナビゲーションバー --}}
+            @include('commons.navbar')
+    
+            <div class="container">
+                {{-- エラーメッセージ --}}
+                @include('commons.error_messages')
+    
+                @yield('content')
+            </div>
+        </body>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>

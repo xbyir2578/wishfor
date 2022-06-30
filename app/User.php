@@ -46,4 +46,14 @@ class User extends Authenticatable
     {
         $this->loadCount('wishfors');
     }
+    
+    public function owned($wishforId)
+    {
+        // if ($this->owned($wishforId)) {
+        //     return false;
+        // } else {
+        //     $this->owned()->attach($wishforId);
+        //     return true;
+        // }
+    }
 }
