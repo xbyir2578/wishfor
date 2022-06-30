@@ -8,7 +8,7 @@
     </head>
 
     <body class="bg-light">
-        <body style="background-image: url('23719095_l.jpg');">
+        <body style="background-image: url('https://30914422d093428a87be69d7c94079ab.vfs.cloud9.ap-northeast-1.amazonaws.com/public/storage/img/sea.jpeg');">
 
             {{-- ナビゲーションバー --}}
             @include('commons.navbar')
